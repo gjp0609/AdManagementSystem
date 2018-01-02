@@ -10,7 +10,7 @@ public class Log {
     private Integer id;
     private String ip;
     private String addr;
-    private String opertation;
+    private String operation;
     private Date createTime;
 
     public Integer getId() {
@@ -37,12 +37,12 @@ public class Log {
         this.addr = addr;
     }
 
-    public String getOpertation() {
-        return opertation;
+    public String getOperation() {
+        return operation;
     }
 
-    public void setOpertation(String opertation) {
-        this.opertation = opertation;
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 
     public Date getCreateTime() {
@@ -59,7 +59,7 @@ public class Log {
                 "id=" + id +
                 ", ip='" + ip + '\'' +
                 ", addr='" + addr + '\'' +
-                ", opertation='" + opertation + '\'' +
+                ", operation='" + operation + '\'' +
                 ", createTime=" + createTime +
                 '}';
     }

@@ -34,12 +34,12 @@
 
     <!-- 使用thymeleaf解析 -->
     <!--<bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">-->
-    <bean id="templateResolver"
-          class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+    <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
         <constructor-arg ref="servletContext"/>
         <property name="prefix" value="/WEB-INF/templates/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML5"/>
+        <property name="characterEncoding" value="UTF-8"/>
     </bean>
 
     <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
@@ -48,12 +48,8 @@
 
     <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
     </bean>
-    <!-- InternalResourceResolver -->
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix" value="/"/>-->
-        <!--<property name="suffix" value=".jsp"/>-->
-    <!--</bean>-->
 
     <!-- default servlet handler -->
     <mvc:default-servlet-handler/>
