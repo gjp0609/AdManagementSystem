@@ -12,7 +12,7 @@ import java.util.Map;
  * @date 17.8.24 18:06
  */
 public class JsonUtil {
-    public static List<Map<String, Object>> parstToList(JSONArray array) {
+    public static List<Map<String, Object>> parseToList(JSONArray array) {
         Object[] objects = array.toArray();
         ArrayList<Map<String, Object>> arrayList = new ArrayList<>();
         for (Object o : objects) {
@@ -35,7 +35,7 @@ public class JsonUtil {
         json2.put("phone", "3425345");
         array.add(json2);
         System.out.println(array.toString());
-        List<Map<String, Object>> mapList = parstToList(array);
+        List<Map<String, Object>> mapList = parseToList(array);
         System.out.println(String.valueOf(mapList));
     }
 }

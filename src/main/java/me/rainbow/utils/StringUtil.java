@@ -13,36 +13,6 @@ import java.util.UUID;
 public class StringUtil {
     private static final Logger log = LoggerFactory.getLogger(StringUtil.class);
 
-    public enum Type {
-        LOWER("纯小写字母", "abcdefghijklmnopqrstuvwxyz"),
-        UPPER("纯大写字母", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
-        NUMBER("纯数字", "0123456789");
-
-        private String name;
-        private String value;
-
-        Type(String name, String index) {
-            this.name = name;
-            this.value = index;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-
     /**
      * 产生指定位数随机字符串
      *
@@ -103,5 +73,35 @@ public class StringUtil {
         String s = getRandomString(10, Type.NUMBER);
         s = StringUtil.getColorfulString(s, Color.PU, Color.INVERT);
         System.out.println(s);
+    }
+
+    public enum Type {
+        LOWER("小写字母", "abcdefghijklmnopqrstuvwxyz"),
+        UPPER("大写字母", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+        NUMBER("数字", "0123456789");
+
+        private String name;
+        private String value;
+
+        Type(String name, String index) {
+            this.name = name;
+            this.value = index;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
     }
 }
