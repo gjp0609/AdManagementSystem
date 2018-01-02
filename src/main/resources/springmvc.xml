@@ -42,16 +42,18 @@
         <property name="templateMode" value="HTML5"/>
     </bean>
 
-    <bean id="templateEngine"
-          class="org.thymeleaf.TemplateEngine">
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
         <property name="templateResolver" ref="templateResolver"/>
     </bean>
 
-    <!-- InternalResourceResolver -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
-        <property name="suffix" value=".jsp"/>
+    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
     </bean>
+    <!-- InternalResourceResolver -->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/"/>-->
+        <!--<property name="suffix" value=".jsp"/>-->
+    <!--</bean>-->
 
     <!-- default servlet handler -->
     <mvc:default-servlet-handler/>
