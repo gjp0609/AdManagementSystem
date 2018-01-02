@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AdManagementSystem:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="AdManagementSystem.war">
+      <element id="artifact" artifact-name="AdManagementSystem:war exploded" />
+    </root>
+  </artifact>
+</component>
