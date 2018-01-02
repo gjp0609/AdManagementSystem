@@ -70,9 +70,10 @@ public class StringUtil {
     }
 
     public static void main(String[] args) {
-        String s = getRandomString(10, Type.NUMBER);
-        s = StringUtil.getColorfulString(s, Color.PU, Color.INVERT);
-        System.out.println(s);
+//        String s = getRandomString(10, Type.NUMBER);
+//        s = StringUtil.getColorfulString(s, Color.PU, Color.INVERT);
+        log.info("email test");
+//        System.out.println(s);
     }
 
     public enum Type {

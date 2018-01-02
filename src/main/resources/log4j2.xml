@@ -6,6 +6,12 @@
     </properties>
 
     <Appenders>
+        <!--replyTo="gjp0609@163.com"-->
+        <SMTP name="Mail" subject="Error Log" to="gjp0609@qq.com" from="gjp0609@163.com"
+              smtpProtocol="smtp" smtpHost="smtp.163.com" smtpPort="25" bufferSize="50" smtpDebug="false"
+              smtpPassword="CN.546.wy" smtpUsername="gjp0609@163.com">
+            <PatternLayout pattern="%d %-5p (%F:%L) - %m%n"/>
+        </SMTP>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d %-5p (%F:%L) - %m%n"/>
         </Console>
@@ -30,8 +36,9 @@
         </logger>
         <logger name="org.springframework.web" level="info">
         </logger>
-        <root level="info" includeLocation="true">
+        <root level="error" includeLocation="true">
             <appender-ref ref="Console"/>
+            <appender-ref ref="Mail"/>
         </root>
     </Loggers>
 </configuration>
