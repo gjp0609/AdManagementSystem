@@ -7,9 +7,9 @@
 
     <Appenders>
         <!--replyTo="gjp0609@163.com"-->
-        <SMTP name="Mail" subject="Error Log" to="gjp0609@qq.com" from="gjp0609@163.com"
-              smtpProtocol="smtp" smtpHost="smtp.163.com" smtpPort="25" bufferSize="50" smtpDebug="false"
-              smtpPassword="CN.546.wy" smtpUsername="gjp0609@163.com">
+        <SMTP name="Mail" subject="Error Log" to="gjp0609@163.com" from="gjp0609@yeah.net"
+              smtpProtocol="smtp" smtpHost="smtp.yeah.net" smtpPort="25" bufferSize="50" smtpDebug="false"
+              smtpPassword="test12345678" smtpUsername="gjp0609@yeah.net">
             <PatternLayout pattern="%d %-5p (%F:%L) - %m%n"/>
         </SMTP>
         <Console name="Console" target="SYSTEM_OUT">
