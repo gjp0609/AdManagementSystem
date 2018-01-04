@@ -2,8 +2,6 @@ package me.rainbow.controller;
 
 import me.rainbow.entity.Log;
 import me.rainbow.service.LogService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +15,7 @@ import java.util.List;
  */
 @RequestMapping("/test")
 @Controller("testController")
-public class TestController {
-    private static final Logger log = LoggerFactory.getLogger(TestController.class);
-
+public class TestController extends BaseController {
     private final LogService service;
 
     @Autowired

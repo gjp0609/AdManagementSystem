@@ -41,12 +41,15 @@
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
 
+    <!-- thymeleaf模板引擎 -->
     <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
         <property name="templateResolver" ref="templateResolver"/>
     </bean>
 
+    <!-- thymeleaf视图解析器 -->
     <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
+        <!-- 配置编码格式 -->
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
 
@@ -54,12 +57,16 @@
     <mvc:default-servlet-handler/>
 
     <!-- interceptors -->
-    <!--<mvc:interceptors>-->
-    <!--<mvc:interceptor>-->
-    <!--<mvc:mapping path="/**"/>-->
-    <!--<bean id="adminLoginInterceptor" class="com.baizhi.interceptor.LoginInterceptor"/>-->
-    <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean id="testInterceptor" class="me.rainbow.interceptor.TestInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean id="logInterceptor" class="me.rainbow.interceptor.LogInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!--upload files -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
