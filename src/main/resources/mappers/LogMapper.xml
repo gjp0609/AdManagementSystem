@@ -16,4 +16,9 @@
         SELECT *
         FROM log
     </select>
+
+    <insert id="save">
+        INSERT INTO log (ip, uri, args, method)
+            VALUE (#{ip}, #{uri}, #{args}, #{method})
+    </insert>
 </mapper>

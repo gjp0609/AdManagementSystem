@@ -30,6 +30,7 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public void saveLog(Log log) {
+        dao.save(log);
     }
 
     @Override

@@ -12,4 +12,6 @@ public interface LogDao {
     List<Log> selectAll();
 
     Log selectById(Integer id);
+
+    void save(Log log);
 }

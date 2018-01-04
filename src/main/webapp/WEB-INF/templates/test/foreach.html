@@ -21,15 +21,15 @@
     <tr>
         <th>id</th>
         <th>ip</th>
-        <th>addr</th>
-        <th>operation</th>
+        <th>uri</th>
+        <th>method</th>
         <th>createTime</th>
     </tr>
     <tr th:each="log,iterStat : ${logs}">
         <td th:text="${log.id}">1</td>
         <td th:text="${log.ip}">127.0.0.1</td>
-        <td th:text="${log.addr}">BJ</td>
-        <td th:text="${log.operation}">Add</td>
+        <td th:text="${log.uri}">BJ</td>
+        <td th:text="${log.method}">Add</td>
         <td th:text="${log.createTime}">2018-01-01</td>
     </tr>
 </table>

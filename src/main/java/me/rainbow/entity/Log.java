@@ -9,8 +9,9 @@ import java.util.Date;
 public class Log {
     private Integer id;
     private String ip;
-    private String addr;
-    private String operation;
+    private String uri;
+    private String args;
+    private String method;
     private Date createTime;
 
     public Integer getId() {
@@ -29,20 +30,28 @@ public class Log {
         this.ip = ip;
     }
 
-    public String getAddr() {
-        return addr;
+    public String getUri() {
+        return uri;
     }
 
-    public void setAddr(String addr) {
-        this.addr = addr;
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
-    public String getOperation() {
-        return operation;
+    public String getArgs() {
+        return args;
     }
 
-    public void setOperation(String operation) {
-        this.operation = operation;
+    public void setArgs(String args) {
+        this.args = args;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
     }
 
     public Date getCreateTime() {
@@ -58,8 +67,8 @@ public class Log {
         return "Log{" +
                 "id=" + id +
                 ", ip='" + ip + '\'' +
-                ", addr='" + addr + '\'' +
-                ", operation='" + operation + '\'' +
+                ", uri='" + uri + '\'' +
+                ", method='" + method + '\'' +
                 ", createTime=" + createTime +
                 '}';
     }
