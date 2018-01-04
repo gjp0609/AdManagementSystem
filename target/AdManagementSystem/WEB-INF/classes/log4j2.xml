@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info" monitorInterval="1800">
+    <properties>
+        <property name="LOG_HOME">/Files/Data/logs</property>
+        <property name="ERROR_LOG_FILE_NAME">ams</property>
+    </properties>
+
+    <Appenders>
+        <!--replyTo="gjp0609@163.com"-->
+        <SMTP name="Mail" subject="Error Log" to="gjp0609@163.com" from="gjp0609@yeah.net"
+              smtpProtocol="smtp" smtpHost="smtp.yeah.net" smtpPort="25" bufferSize="50" smtpDebug="false"
+              smtpPassword="test12345678" smtpUsername="gjp0609@yeah.net">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%d] [%-5p] (%F:%L) - %m%n"/>
+        </SMTP>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d] [%-5p] (%F:%L) - %m%n"/>
+        </Console>
+        <RollingRandomAccessFile name="ErrorLog" fileName="${LOG_HOME}/${ERROR_LOG_FILE_NAME}.log"
+                                 filePattern="${LOG_HOME}/${ERROR_LOG_FILE_NAME}.log.%d{yyyy-MM-dd}.gz">
+            <PatternLayout pattern="[%d] [%-5p] (%F:%L) - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <logger name="*" level="info"/>
+        <root level="info" includeLocation="true">
+            <appender-ref ref="Mail"/>
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingRandomAccessFile"/>
+        </root>
+    </Loggers>
+</configuration>

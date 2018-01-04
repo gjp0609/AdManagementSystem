@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Title</title>
+    <style>
+        .block {
+            border: solid #666666 1px;
+            margin: 5px;
+        }
+    </style>
+    <script src="plugins/jquery/jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="block">
+    <label>基本类型</label>
+    <span th:text="${int}">1</span>
+    <span th:text="${double}">1</span>
+    <span th:text="${boolean}">boo</span>
+    <span th:text="${text1}">text1</span>
+    <span th:text="|hello, ${text2}|">text2</span>
+</div>
+<div class="block">
+    <label>图片展示</label>
+    <img th:src="${src}" src="" width="30px"/>
+</div>
+<div class="block">
+    <label>url</label>
+    <a th:href="${url}">Click</a>
+    <a th:href="|mailto:${email}|">email</a>
+</div>
+</body>
+</html>
