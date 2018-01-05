@@ -51,16 +51,16 @@
     <tx:annotation-driven transaction-manager="tm"/>
 
     <!-- aspectj  -->
-    <!--<aop:aspectj-autoproxy/>-->
+    <aop:aspectj-autoproxy/>
 
     <!--声明hash的凭证匹配器-->
     <!--<bean id="hashedCredentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
-        <!--<property name="hashAlgorithmName" value="md5"/>-->
-        <!--<property name="hashIterations" value="233"/>-->
+    <!--<property name="hashAlgorithmName" value="md5"/>-->
+    <!--<property name="hashIterations" value="233"/>-->
     <!--</bean>-->
 
     <!--realm-->
     <!--<bean id="customMd5Realm" class="me.rainbow.realm.CustomMd5Realm">-->
-        <!--<property name="credentialsMatcher" ref="hashedCredentialsMatcher"/>-->
+    <!--<property name="credentialsMatcher" ref="hashedCredentialsMatcher"/>-->
     <!--</bean>-->
 </beans>

@@ -2,11 +2,16 @@ package me.rainbow.controller;
 
 import me.rainbow.entity.Log;
 import me.rainbow.service.LogService;
+import me.rainbow.utils.DownloadUtil;
+import me.rainbow.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,7 +19,7 @@ import java.util.List;
  * @date 17.12.29 15:34
  */
 @RequestMapping("/test")
-@Controller("testController")
+@Controller
 public class TestController extends BaseController {
     private final LogService service;
 
@@ -48,8 +53,22 @@ public class TestController extends BaseController {
     public String foreach(HttpServletRequest request) {
         log.info("foreach page");
         List<Log> logs = service.getAllLogs();
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("key", "xxx");
+        service.testAspectJ(logs.get(0), hashMap);
         request.setAttribute("logs", logs);
         return "test/foreach";
+    }
+
+    @RequestMapping(params = "excel")
+    public void excel(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            List<Log> allLogs = service.getAllLogs();
+            ExcelUtil.getExcel(allLogs, null);
+            DownloadUtil.fileDownload(request, response, null, "123.xls");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

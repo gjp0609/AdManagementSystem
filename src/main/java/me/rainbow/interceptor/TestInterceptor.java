@@ -1,6 +1,5 @@
 package me.rainbow.interceptor;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -20,13 +19,6 @@ public class TestInterceptor extends HandlerInterceptorAdapter {
         boolean flag = true;
         String url = request.getRequestURL().toString();
         log.info("info url:{}", url);
-        if (url.contains("/test")) {
-            String token = request.getParameter("token");
-            if (StringUtils.isNoneBlank(token)) {
-                log.info("token:{}", token);
-                flag = true;
-            } else flag = false;
-        }
         return flag;
     }
 }

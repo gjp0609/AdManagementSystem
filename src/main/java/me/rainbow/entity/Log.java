@@ -1,5 +1,7 @@
 package me.rainbow.entity;
 
+import me.rainbow.annotation.Excel;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,8 @@ import java.util.Date;
  * @date 17.12.29 15:50
  */
 public class Log {
+
+    @Excel(name = "id")
     private Integer id;
     private String ip;
     private String uri;

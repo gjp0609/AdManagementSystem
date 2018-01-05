@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author guojinpeng
@@ -31,6 +32,11 @@ public class LogServiceImpl implements LogService {
     @Override
     public void saveLog(Log log) {
         dao.save(log);
+    }
+
+    @Override
+    public void testAspectJ(Log log, Map<String, Object> map) {
+
     }
 
     @Override
