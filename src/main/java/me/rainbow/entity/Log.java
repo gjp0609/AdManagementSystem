@@ -1,7 +1,9 @@
 package me.rainbow.entity;
 
-import me.rainbow.annotation.Excel;
 
+import cn.afterturn.easypoi.excel.annotation.Excel;
+
+import java.text.DecimalFormat;
 import java.util.Date;
 
 /**
@@ -10,13 +12,14 @@ import java.util.Date;
  */
 public class Log {
 
-    @Excel(name = "id")
+    @Excel(name = "XXX", numFormat = "###,###.00")
     private Integer id;
     private String ip;
     private String uri;
     private String args;
     private String method;
     private Date createTime;
+
 
     public Integer getId() {
         return id;
@@ -68,6 +71,7 @@ public class Log {
 
     @Override
     public String toString() {
+        DecimalFormat format = new DecimalFormat("");
         return "Log{" +
                 "id=" + id +
                 ", ip='" + ip + '\'' +
@@ -76,4 +80,5 @@ public class Log {
                 ", createTime=" + createTime +
                 '}';
     }
+
 }

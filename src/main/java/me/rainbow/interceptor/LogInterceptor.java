@@ -16,7 +16,7 @@ import java.util.Map;
  * @author guojinpeng
  * @date 18.1.3 12:03
  */
-public class LogInterceptor extends HandlerInterceptorAdapter {
+public class      LogInterceptor extends HandlerInterceptorAdapter {
     private final LogService logService;
 
     @Autowired
